@@ -1,0 +1,21 @@
+var an = true;
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  if (an) {
+    background(0, 220, 0);
+  } else {
+    background(0);
+  }
+}
+
+function mousePressed() {  
+  if (an) {
+    an = false; 
+  } else {
+    an = true;
+  }
+}
