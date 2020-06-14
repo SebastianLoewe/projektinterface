@@ -1,0 +1,26 @@
+let bckgrnd = 0;
+
+function setup() {
+  createCanvas(400, 400);
+  background(0);
+}
+
+function draw() {
+  noCursor();
+  noStroke();
+  fill(mouseX, mouseY, 100, 70);
+  circle(mouseX, mouseY, 50);
+}
+
+function mousePressed () {
+ 
+  if (bckgrnd == 0){
+      bckgrnd = 255;
+  }
+  else if (bckgrnd == 255) {
+     bckgrnd = 0;
+  }
+  background(bckgrnd);
+}
+
+//Übung; Erstellt eine andere Maus-Funktion, die eine if/else-Logik nutzt. Ändert z.B. den Wert für fill() oder circle()
