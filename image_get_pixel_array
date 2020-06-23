@@ -1,0 +1,30 @@
+let img;
+
+function preload() {
+  img = loadImage('image/rockies.jpg');
+}
+
+function setup() {
+  createCanvas(img.width, img.height);
+}
+
+function draw() {
+  rectMode(CENTER);
+  image(img, 0, 0, width, height);
+  img.loadPixels();
+  c = getQuick(img, mouseX, mouseY);
+  noCursor();
+  fill(c);
+  rect(mouseX, mouseY, 50, 50)
+  img.updatePixels();
+}
+
+function getQuick(img, x, y) {
+  var i = (y * img.width + x) * 4;
+  return [
+    img.pixels[i],
+    img.pixels[i + 1],
+    img.pixels[i + 2],
+    img.pixels[i + 3],
+  ];
+}
