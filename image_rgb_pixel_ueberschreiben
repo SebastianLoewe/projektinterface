@@ -1,0 +1,17 @@
+let img;
+function preload() {
+  img = loadImage("https://pbs.twimg.com/profile_images/378800000532546226/dbe5f0727b69487016ffd67a6689e75a_400x400.jpeg");
+}
+function setup() {
+  createCanvas(400, 400);
+  img.loadPixels();
+  for (let i = 0; i < img.pixels.length; i++) {
+    if(i%4 == 0) img.pixels[i] = 255;
+    if(i%4 == 3) img.pixels[i] = 200;
+  }
+  img.updatePixels();
+  image(img, 0, 0);
+}
+
+function draw() {
+}
