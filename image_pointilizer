@@ -1,0 +1,33 @@
+let img;
+var pixelSize = 7;
+
+function preload() {
+  img = loadImage("images/rockies.jpg");
+}
+
+function setup() {
+  createCanvas(640, 480);
+  background(200);
+}
+
+function draw() {
+
+  img.loadPixels();
+
+  for (i = 0; i < 100; i++) {
+    let x = int(random(img.width));
+    let y = int(random(img.height));
+
+    let imgIndex = ((y * img.width) + x) * 4;
+    
+    let r = img.pixels[imgIndex + 0];
+    let g = img.pixels[imgIndex + 1];
+    let b = img.pixels[imgIndex + 2];
+    let a = img.pixels[imgIndex + 3];
+
+    fill(r, g, b, a);
+    noStroke();
+    circle(x, y, pixelSize);
+
+  }
+}
