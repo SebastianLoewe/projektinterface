@@ -1,0 +1,26 @@
+var images = [];
+
+function preload() {
+
+  for (var i = 0; i <= 2; i++) {
+    images[i] = loadImage('images/img' + i + '.jpg');
+  }
+}
+
+function setup() {
+  createCanvas(900, 900);
+  background(0);
+}
+
+function draw() {
+
+  for (var y = 0; y < height; y = y + 200) {
+    for (var x = 0; x < width; x = x + 300) {
+      for (var i = 0; i <= 2; i++) {
+        image(images[i], images[i].width * i, y, 300, 200);
+
+      //spacing per image  = total width / (image width + image spacing)
+      }
+    }
+  }
+}
