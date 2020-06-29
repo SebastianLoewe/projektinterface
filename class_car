@@ -1,28 +1,25 @@
-var car;
-var car2;
-var car3;
+var car = [];
+var maxCars = 1000;
+
 
 function setup() {
-  createCanvas(400, 400);
-  car = new Car(color(100), 40, 25, 2);
-  car2 = new Car(color(200), 40, 45, 6);
-  car3 = new Car(color(100, 200, 50), 40, 65, 4);
-  car4 = new Car(color(200, 100, 100), 40, 105, 8);
-
+  createCanvas(600, 600);
+  
+  for (var i = 0; i < maxCars; i++) {
+    var s = random(1, 20);
+    var x = random(width);
+    var y = random(height);
+    var c = color(random(255), random(255), random(255), random(255));
+    car[i] = new Car(c, x, y, s);
+  }
 }
 
 function draw() {
-  background(220);
-
-  car.display();
-  car.move();
-  car2.display();
-  car2.move();
-  car3.display();
-  car3.move();
-  car4.display();
-  car4.move();
-
+ background(0);
+ // blendMode(LIGHTEST);
+  for (var i = 0; i < car.length; i++) {
+  car[i].move();
+  car[i].display(); }
 }
 
 
@@ -33,26 +30,19 @@ class Car {
     this.xpos = tempXpos;
     this.ypos = tempYpos,
       this.xspeed = tempXspeed;
-
   }
 
   display() {
-
-    stroke(0);
+    noStroke(0);
     rectMode(CENTER);
     fill(this.c);
     rect(this.xpos, this.ypos, 20, 10);
-
   }
 
   move() {
-
     this.xpos = this.xpos + this.xspeed;
-    if (this.xpos > width) {
-      this.xpos = 0;
-
+    if (this.xpos > width || this.xpos < 0) {
+      this.xspeed = this.xspeed * -1;
     }
-
   }
-
 }
