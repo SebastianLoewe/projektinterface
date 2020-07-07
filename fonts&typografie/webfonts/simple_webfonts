@@ -1,0 +1,9 @@
+function setup() { 
+  createCanvas(800, 500);
+	background(230);
+	fill(255, 0, 0);
+	textSize(60);
+  // This name refers to the Google Fonts embedded in index.html
+	textFont("Nosifer");
+	text("What’s up?", 110, height/2);
+} 
