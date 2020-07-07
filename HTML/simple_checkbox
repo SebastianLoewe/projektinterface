@@ -1,0 +1,26 @@
+let checkbox;
+let cnv;
+
+function setup() {
+
+  checkbox = createCheckbox(' fill');
+  checkbox.changed(changeFill);
+  cnv = createCanvas(400, 400);
+  cnv.position(10, 30);
+  noFill();
+}
+
+function draw() {
+  background(200);
+  circle(200, 200, 200);
+ 
+}
+
+function changeFill() {
+
+  if (checkbox.checked()) {
+    fill(0);
+  } else {
+    fill(255);
+  }
+}
