@@ -1,0 +1,31 @@
+var slider1;
+var slider2;
+
+function setup() {
+  createCanvas(450, 600);
+  slider1 = createSlider(1,10, 2);
+  slider2 = createSlider(1,10, 2);
+  
+}
+  
+  function draw(){
+
+  var margin = height / 20;
+  var allWidth = width - 3 * margin;
+  var allHeight = height - 4 * margin;
+  var moduleWidth = allWidth / slider1.value();
+  var moduleHeight = allHeight / slider2.value();
+
+  background(240);
+  noStroke();
+
+  fill(75, 185, 165);
+  rect(margin + moduleWidth + margin, margin, moduleWidth, moduleHeight);
+
+  fill(120, 155, 155);
+  rect(margin, margin + moduleHeight + margin, moduleWidth, moduleHeight);
+
+  fill(30, 50, 50);
+  rect(margin + moduleWidth + margin, height - margin - moduleHeight, moduleWidth, moduleHeight);
+
+}
