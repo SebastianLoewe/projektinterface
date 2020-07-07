@@ -1,0 +1,38 @@
+function setup() {
+  createCanvas(600,800);
+  background(240);
+  noStroke(); 
+}
+
+function draw() {
+
+  const margin = height / 80;
+  const imgWidth = width - 2 * margin;
+  const allHeight = height - 4 * margin;
+  const imgHeight = allHeight / 3;
+  
+  translate(margin, margin);
+  fill(75, 185, 165);
+  rect(0, 0, imgWidth/2, imgHeight/2);
+  
+  translate(imgWidth/2+margin,0);
+  fill(75, 185, 165);
+  rect(0, 0, imgWidth/2-margin, imgHeight/2);
+
+  translate(0, margin+imgHeight/2);
+  fill(120, 155, 155);
+  rect(0, 0, imgWidth/2-margin, imgHeight);
+
+  translate(0, margin + imgHeight);
+  fill(30, 50, 50);
+  rect(0, 0, imgWidth/2-margin, imgHeight);
+  
+  translate(-(imgWidth/2+margin), 0);
+  fill(30, 50, 50);
+  rect(0, 0, imgWidth/2, imgHeight);
+  
+  translate(0, margin+imgHeight);
+  fill(30, 50, 50);
+  rect(0, 0, imgWidth, imgHeight);
+
+}
