@@ -1,0 +1,25 @@
+var font;
+var pts;
+
+function preload() {
+  font = loadFont('fonts/item.ttf');
+}
+
+function setup() {
+
+  createCanvas(700, 300);
+  background(90);
+}
+
+
+function draw() {
+
+  pts = font.textToPoints('WHAT?', 100, 200, 100);
+  for (var i = 0; i < pts.length - 1; i++) {
+    strokeWeight(0.3);
+    fill(0, i, 100, 150);
+    circle(pts[i].x, pts[i].y, 20);
+    // line(pts[i].x, pts[i].y, pts[i+1].x, pts[i+1].y);
+
+  }
+}
