@@ -1,0 +1,22 @@
+var radio;
+
+function setup() {
+  createCanvas(400, 400);
+  let myDiv = createDiv('change background color');
+  myDiv.style('font-size', '22px');
+  radio = createRadio();
+  radio.option('aliceblue');
+  radio.option('peachpuff');
+  radio.option('lightgreen');
+  radio.style('height', '60px');
+  textAlign(LEFT);
+  fill(255, 0, 0);
+}
+
+function draw() {
+  let val = radio.value();
+  background(val);
+}
+
+// Liste der SVG-Namen-Farben: 
+// https://www.december.com/html/spec/colorsvg.html
