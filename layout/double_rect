@@ -1,0 +1,32 @@
+function setup() {
+  myCan = createCanvas(600, 800);
+}
+
+function draw() {
+
+const margin = height / 50;
+const imgWidth = (width - 2 * margin)/2;
+const allHeight = height - 4 * margin;
+const imgHeight = allHeight / 5;
+
+background(240);
+noStroke();
+fill(30);
+
+fill(75, 185, 165);
+rect(margin, margin, imgWidth, imgHeight);
+fill(75, 185, 165);
+rect(margin + imgWidth + margin, margin, imgWidth-margin, imgHeight);
+
+fill(120, 155, 155);
+rect(margin, margin + imgHeight + margin, imgWidth, imgHeight);
+fill(120, 155, 190);
+rect(margin  + imgWidth + margin, margin + imgHeight + margin, imgWidth-margin, 2*imgHeight+margin);
+  
+fill(30, 150, 170);
+rect(margin, margin + 2 * (imgHeight + margin), imgWidth, imgHeight);
+
+fill(30, 150, 150);
+rect(margin, margin + 3 * (imgHeight + margin), 2*imgWidth, 2*imgHeight-margin);
+
+}
