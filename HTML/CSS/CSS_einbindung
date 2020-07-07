@@ -1,0 +1,15 @@
+function setup() {
+  myCanvas = createCanvas(400, 400);
+  myCanvas.position(50, 400);
+  myP = createP("this is a paragraph from inside P5");
+  myP.position(0, 50);
+}
+
+function draw() {
+  background(255-mouseX/2);
+  fill(mouseX/2, mouseY/2, 100);
+  circle(mouseX, mouseY, 50);
+}
+
+
+//https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
