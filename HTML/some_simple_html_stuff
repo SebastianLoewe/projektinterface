@@ -1,0 +1,46 @@
+let diameter = 5;
+var element;
+
+function setup() {
+  let myCanvas = createCanvas(600, 400);
+  myCanvas.position(100, 100);
+  myCanvas.parent('myParentContainer');
+  element = createElement('h1', 'This is a P5-HTML-Element');
+  element.position(100, 500);
+  let txt = createDiv('This is a HTML string!');
+  txt.position(100, 100);
+ 
+  img = createImg("http://th07.deviantart.net/fs70/PRE/i/2011/260/3/5/dash_hooray_by_rainbowcrab-d49xk0d.png");
+  img.position(400, 50);
+  img.size(400, 400);
+  img.mousePressed(uniHide);
+  myCanvas.mousePressed(incDiameter);
+  
+}
+
+function mousePressed(){
+  element.html("This is the clicked element!");
+  element.style('background-color','skyblue');
+  element.style('font-family','Arial');
+}
+
+
+function draw() {
+  background(220, 180, 200);
+  
+  ellipse(mouseX, height / 2, 100);
+  ellipse(width / 4, height / 2, diameter);
+}
+
+
+function uniHide() {
+  img.hide();
+}
+
+function uniShow() {
+  img.show();
+}
+
+function incDiameter() {
+	diameter = diameter + 5;
+}
