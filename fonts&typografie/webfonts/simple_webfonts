@@ -7,3 +7,4 @@ function setup() {
 	textFont("Nosifer");
 	text("What’s up?", 110, height/2);
 } 
+//https://developers.google.com/fonts/docs/getting_started
