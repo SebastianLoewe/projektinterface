@@ -1,0 +1,43 @@
+function setup() {
+  createCanvas(400, 400);
+  textSize(16);
+}
+
+function draw() {
+  noStroke();
+  background("skyblue");
+  fill(100, 200, 100, 200);
+  rect(50, 50, 300, 300);
+
+  textSize(100);
+  fill(0);
+  text("Text inside", 60, 20, 350, 350);
+
+  fill(250);
+  beginShape();
+
+  // Specifying all the vertices 
+  // of the exterior shape 
+  vertex(10, 10);
+  vertex(390, 10);
+  vertex(390, 390);
+  vertex(10, 390);
+
+  // Starting a contour 
+  beginContour();
+
+  // Specifying all the vertices 
+  // of the interior shape 
+  // in counter-clockwise order 
+  vertex(50, 50);
+  vertex(50, 350);
+  vertex(350, 350);
+  vertex(350, 50);
+
+  // Ending the contour 
+  endContour();
+
+  // Ending the shape 
+  endShape(CLOSE);
+
+}
