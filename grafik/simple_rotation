@@ -1,0 +1,17 @@
+function setup() {
+  createCanvas(500, 500);
+  textSize(30);
+}
+
+function draw() {
+  background(220);
+    
+    angleMode(DEGREES);
+  	push();
+    translate(100,100);
+    rotate(90);
+    text("ROTATED TEXT", 0,0);
+	pop();
+
+    rect(0,0,100,100);
+}
