@@ -3,7 +3,9 @@ Teachable Machine Emoji
 
 Built with imageClassifier model from ml5js, p5js and Teachable Machine
 
-Created by Andreas Refsgaard 2020
+https://teachablemachine.withgoogle.com/train
+
+Code by Andreas Refsgaard
 
 Inspired by The Coding Train https://thecodingtrain.com/TeachableMachine/1-teachable-machine.html
 */
