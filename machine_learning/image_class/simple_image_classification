@@ -1,0 +1,27 @@
+//Vergesst nicht, einen image-Ordner anzulegen und Bilder hochzuladen
+
+let classifier;
+let img;
+
+function preload() {
+  classifier = ml5.imageClassifier('MobileNet');
+  img = loadImage('images/ladybug.jpg');
+}
+
+function setup() {
+  createCanvas(400, 400);
+  classifier.classify(img, gotResult); //gotResult ist eine callback-Funktion
+  image(img, 0, 0, 400, 300);
+}
+
+function gotResult(error, results) {
+  // Display error in the console
+  if (error) {
+    console.error(error);
+  } else {
+    // die "results" werden in ein array namens "results", nach "confidence" sortiert, geschrieben
+    console.log(results);
+    createDiv(`Label: ${results[0].label}`);
+    createDiv(`Confidence: ${nf(results[0].confidence, 0, 3)}`);
+  }
+}
