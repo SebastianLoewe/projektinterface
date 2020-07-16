@@ -1,0 +1,25 @@
+  var d;
+  var h;
+  var m;
+  var s;
+  var mo;
+  var ye;
+
+  function setup() {
+    createCanvas(400, 400);
+    ye = year();
+    mo = month();
+    d = day();
+    h = hour();
+    m = minute();
+    s = second();
+  }
+
+  function draw() {
+
+    background(220);
+    textSize(22);
+    text('year: ' + ye + ', month: ' + mo + ', day: ' + d, 50 , 150);
+    text('hour: ' + h + ', minute: ' + m + ', second: ' + s, 50 , 200);
+
+  }
