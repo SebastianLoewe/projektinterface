@@ -7,8 +7,10 @@ var vol;
 let mic;
 var canvas;
 
+
 function preload() {
-  typo = loadFont("/fonts/item.ttf");
+//ITEM findet ihr hier: https://www.fontzillion.com/fonts/bojmic-interpro/item
+typo = loadFont("/fonts/item.ttf");
 }
 
 function setup() {
