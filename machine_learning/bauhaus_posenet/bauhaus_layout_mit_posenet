@@ -1,0 +1,96 @@
+let video;
+let poseNet;
+let poses = [];
+let txt = ("Bauhaus Ausstellung");
+var typo;
+var vol;
+let mic;
+var canvas;
+
+function preload() {
+  typo = loadFont("/fonts/item.ttf");
+}
+
+function setup() {
+  canvas = createCanvas(600, 900);
+  canvas.position(20, 220);
+  imageMode(CENTER);
+  video = createCapture(VIDEO);
+  video.position(20, canvas.height+240);
+  video.size(600, 440);
+  poseNet = ml5.poseNet(video, modelReady);
+  poseNet.on('pose', function(results) {
+    poses = results;
+  });
+  mic = new p5.AudioIn();
+  mic.start();
+}
+
+function modelReady() {
+  select('#status').html('PoseNet model loaded… detecting poses.');
+}
+
+
+function draw() {
+
+  background('moccasin');
+  if (poses.length > 0) {
+    let pose = poses[0].pose;
+
+    let nose = pose.nose;
+    let noseX = map(nose.x, 0, video.width, width, 0);
+    let noseY = map(nose.y, 0, video.height, 0, height);
+    strokeWeight(5);
+    stroke(0);
+    fill(255, 255, 0, 200);
+    circle(noseX, noseY, 200);
+
+    let leftShoulder = pose.leftShoulder;
+    let rightShoulder = pose.rightShoulder;
+    let leftShX = map(leftShoulder.x, 0, video.width, width, 0);
+    let leftShY = map(leftShoulder.y, 0, video.height, 0, height);
+    let rightShX = map(rightShoulder.x, 0, video.width, width, 0);
+    let rightShY = map(rightShoulder.y, 0, video.height, 0, height);
+    noStroke();
+    fill(0, 0, 255, 200);
+    let w = rightShX - leftShX;
+    let h = rightShY - leftShY;
+    rect(leftShX, rightShX, w * 2, h);
+
+    let leftWrist = pose.leftWrist;
+    let rightWrist = pose.rightWrist;
+    let leftWrX = map(leftWrist.x, 0, video.width, width, 0);
+    let leftWrY = map(leftWrist.y, 0, video.height, 0, height);
+    let rightWrX = map(rightWrist.x, 0, video.width, width, 0);
+    let rightWrY = map(rightWrist.y, 0, video.height, 0, height);
+    let txtSz = abs((rightWrX - leftWrX) / 10);
+    // console.log("tS" ,txtSz);
+    textFont(typo);
+    textSize(txtSz);
+    fill(0, 0, 0);
+    text(txt, leftWrX, leftWrY, rightWrX, rightWrY);
+    
+    fill(0, 0, 0, 250);
+    rect(noseX, noseY, 20, 600);
+
+    let leftHip = pose.leftHip;
+    let rightHip = pose.rightHip;
+    let leftHpX = map(leftHip.x, 0, video.width, width, 0);
+    let leftHpY = map(leftHip.y, 0, video.height, 0, height);
+    let rightHpX = map(rightHip.x, 0, video.width, width, 0);
+    let rightHpY = map(rightHip.y, 0, video.height, 0, height);
+    let HpD = abs(dist(leftHpX, leftHpY, rightHpX, rightHpY));
+    // let pgH = rightKnY + leftKnY;
+
+    fill(255, 0, 0, 250);
+    strokeWeight(5);
+    stroke(0);
+    arc(leftHpX, leftHpY, HpD * 3, HpD * 3, PI, TWO_PI, CHORD);
+
+  }
+  
+  var vol = mic.getLevel();
+  if(vol > 0.1){
+  saveCanvas('myLayout' + '.jpg');
+  } 
+}
