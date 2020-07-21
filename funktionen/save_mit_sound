@@ -1,0 +1,15 @@
+  var vol;
+  var mic;
+  
+  function setup(){
+  mic = new p5.AudioIn();
+  mic.start();
+  }
+  
+  function draw(){
+    var vol = mic.getLevel();
+    // mic level geht von 0.0 bis 1.0
+    if(vol > 0.1){
+    saveCanvas('myLayout' + '.jpg');
+   }
+  }
