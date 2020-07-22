@@ -66,11 +66,12 @@ function draw() {
     let rightWrX = map(rightWrist.x, 0, video.width, width, 0);
     let rightWrY = map(rightWrist.y, 0, video.height, 0, height);
     let txtSz = abs((rightWrX - leftWrX) / 10);
-    // console.log("tS" ,txtSz);
+    let distX = abs(rightWrX – leftWrX);
+    let distY = abs(rightWrY – leftWrY);
     textFont(typo);
     textSize(txtSz);
     fill(0, 0, 0);
-    text(txt, leftWrX, leftWrY, rightWrX, rightWrY);
+    text(txt, leftWrX, leftWrY, distX, distY);
     
     fill(0, 0, 0, 250);
     rect(noseX, noseY, 20, 600);
