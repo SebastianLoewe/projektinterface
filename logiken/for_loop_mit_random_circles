@@ -1,0 +1,18 @@
+function setup() {
+  createCanvas(800, 800);
+  background(220);
+}
+
+function draw() {
+  /*
+  let zufallX = random(1, width);
+  let zufallY = random(1, height);
+  circle(zufallX, zufallY, 20);
+*/
+
+  for (let i = 0; i <= 1000; i++) {
+    let zufallX = random(1, width);
+    let zufallY = random(1, height);
+    circle(zufallX, zufallY, 20);
+  }
+}
