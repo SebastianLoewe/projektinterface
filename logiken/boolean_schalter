@@ -4,18 +4,14 @@ function setup() {
   createCanvas(400, 400);
 }
 
-function draw() {
-  if (an) {
-    background(0, 220, 0);
-  } else {
-    background(0);
-  }
-}
+function draw() {}
 
 function mousePressed() {  
   if (an) {
+    background(0, 220, 0);
     an = false; 
   } else {
+    background(0);
     an = true;
   }
 }
