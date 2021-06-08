@@ -1,7 +1,7 @@
-var x = 10;
-var y = 10;
-var xspeed = 7;
-var yspeed = 10;
+let x = 10;
+let y = 10;
+let xspeed = 7;
+let yspeed = 10;
 
 function setup() {
   createCanvas(400, 400);
