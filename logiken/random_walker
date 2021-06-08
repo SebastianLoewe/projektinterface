@@ -1,5 +1,5 @@
-var x = 500;
-var y = 300;
+let x = 500;
+let y = 300;
 
 function setup() {
   createCanvas(800, 600);
