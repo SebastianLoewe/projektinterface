@@ -13,12 +13,16 @@ function mouseDragged() {
    
     let x = random(mouseX-30,mouseX+20);
     let y = random(mouseY-20,mouseY+30);
-    let r = random(50, 60);
+    let d = random(50, 60);
 
-    fill(random(250), random(250), random(250), 100);
+    let r = random(250);
+    let g = random(250);
+    let b = random(250);
+   
+    fill(r, g, b, 100);
     noStroke();
    
-    circle(x, y, r);
+    circle(x, y, d);
   
   }
   
