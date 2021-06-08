@@ -11,9 +11,9 @@ function mouseDragged() {
 
  for (let zaehler = 0; zaehler < 10; zaehler+=1) {
    
-    var x = random(mouseX-30,mouseX+20);
-    var y = random(mouseY-20,mouseY+30);
-    var r = random(50, 60);
+    let x = random(mouseX-30,mouseX+20);
+    let y = random(mouseY-20,mouseY+30);
+    let r = random(50, 60);
 
     fill(random(250), random(250), random(250), 100);
     noStroke();
