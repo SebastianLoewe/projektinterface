@@ -1,9 +1,9 @@
-  var d;
-  var h;
-  var m;
-  var s;
-  var mo;
-  var ye;
+  let d;
+  let h;
+  let m;
+  let s;
+  let mo;
+  let ye;
 
   function setup() {
     createCanvas(400, 400);
