@@ -1,5 +1,5 @@
-var slider1;
-var slider2;
+let slider1;
+let slider2;
 
 function setup() {
   createCanvas(450, 600);
@@ -10,11 +10,11 @@ function setup() {
   
   function draw(){
 
-  var margin = height / 20;
-  var allWidth = width - 3 * margin;
-  var allHeight = height - 4 * margin;
-  var moduleWidth = allWidth / slider1.value();
-  var moduleHeight = allHeight / slider2.value();
+  let margin = height / 20;
+  let allWidth = width - 3 * margin;
+  let allHeight = height - 4 * margin;
+  let moduleWidth = allWidth / slider1.value();
+  let moduleHeight = allHeight / slider2.value();
 
   background(240);
   noStroke();
