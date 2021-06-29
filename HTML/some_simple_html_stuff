@@ -1,5 +1,6 @@
 let diameter = 5;
-var element;
+let diameter2 = 5;
+let element;
 
 function setup() {
   let myCanvas = createCanvas(600, 400);
@@ -22,6 +23,7 @@ function mousePressed(){
   element.html("This is the clicked element!");
   element.style('background-color','skyblue');
   element.style('font-family','Arial');
+  diameter2 = diameter2 + 5;
 }
 
 
