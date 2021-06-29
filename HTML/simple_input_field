@@ -1,21 +1,23 @@
-var myFont;
-var input;
+let myFont;
+let output;
+let inp;
 
 function setup() {
   createCanvas(400, 400);
   myFont = loadFont('/fonts/item.ttf');
-  let inp = createInput('type headline');
+  inp = createInput('…');
+  inp.position(410, 0);
   inp.input(myInputEvent);
 }
 
 function myInputEvent() {
-  input = this.value();
+  output = inp.value();
 }
 
 function draw() {
   background(100);
   fill('skyblue');
   textFont(myFont);
-  textSize(mouseX);
-  text(input, 10, mouseY);
+  textSize(60);
+  text(output, 10, mouseY, 100, 200);
 }
