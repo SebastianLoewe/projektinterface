@@ -1,0 +1,18 @@
+let slider;
+let slider2;
+
+function setup() {
+  createCanvas(400, 400)
+  slider = createSlider(0, 255, 100, 20);
+  slider.position(0, 400);
+  slider.style('width', '400px');
+  slider2 = createSlider(0, 255, 100, 20);
+  slider2.position(0, 420);
+  slider2.style('width', '400px');
+}
+
+function draw() {
+  let val = slider.value();
+  let val2 = slider2.value();
+  background(val, val2, 30);
+}
